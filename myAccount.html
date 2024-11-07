@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="greeting">Hey User!</h1>
+    <img
+      id="profileImage"
+      src="https://randomuser.me/api/portraits/men/1.jpg"
+      alt="Profile Image"
+    />
+    <br />
+    <button id="logoutButton">Logout</button>
+
+
+
+    
+    <script>
+      const username = localStorage.getItem("username");
+      if (!username) {
+        window.location.href = "/";
+      } else {
+        document.getElementById("greeting").textContent = `Hey ${username}!`;
+      }
+
+      function handleLogout() {
+        localStorage.removeItem("username");
+        localStorage.removeItem("password");
+        localStorage.removeItem("watchlist");
+
+
+        alert("You have logged out.");
+        window.location.href = "/";
+      }
+
+      document
+        .getElementById("logoutButton")
+        .addEventListener("click", handleLogout);
+    </script>
+  </body>
+</html>

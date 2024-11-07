@@ -1,0 +1,206 @@
+:root {
+    --main-color: white;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --header-background: #333;
+    --header-text-color: #fff;
+    --button-background: #ff6f61;
+    --button-hover-background: #ff4a3a;
+    --movie-background: #fff;
+    --overview-background: #f9f9f9;
+    --add-to-watchlist-background: crimson;
+    --add-to-watchlist-hover-background: #ff2d1a;
+    --border-color: #333;
+    --padding-small: 5px;
+    --padding-medium: 10px;
+    --padding-large: 15px;
+    --margin-small: 5px;
+    --margin-medium: 10px;
+    --margin-large: 15px;    
+    --border-radius: 5px;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--header-background);
+    color: var(--header-text-color);
+    padding: var(--padding-large);
+    text-align: center;
+}
+
+.search-container {
+    display: inline-block;
+    text-align: center;
+    margin-bottom: var(--margin-small);
+}
+
+.search-container input[type="text"] {
+    padding: var(--padding-medium);
+    border: none;
+    border-radius: var(--border-radius);
+    width: 100%; 
+    max-width: 300px; 
+    margin-right: var(--margin-medium);
+}
+
+.search-container button {
+    padding: var(--padding-medium) var(--padding-large);
+    background-color: var(--button-background);
+    border: none;
+    border-radius: var(--border-radius);
+    color: white;
+    cursor: pointer;
+    font-size: clamp(0.9rem, 5vw, 1.3rem);
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: var(--button-hover-background);
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: var(--padding-large);
+}
+
+.movie {
+    background-color: var(--movie-background);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: var(--margin-large);
+    overflow: hidden;
+    width: 100%; 
+    max-width: 200px;
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.movie:hover .overview {
+    transform: scale(1.05);
+    display: inline;
+}
+
+.overview {
+    padding: var(--padding-large);
+    background-color: var(--overview-background);
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    height: 150px;
+    scrollbar-width: none;
+}
+
+.movie img {
+    width: 100%;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.movie-info {
+    padding: var(--padding-large);
+}
+
+.movie-info h3 {
+    margin-bottom: var(--margin-medium);
+}
+
+.movie-info span {
+    font-weight: bold;
+}
+
+.green {
+    color: green;
+}
+
+.orange {
+    color: orange;
+}
+
+.red {
+    color: red;
+}
+
+.add-to-watchlist {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    background-color: var(--add-to-watchlist-background);
+    color: white;
+    padding: var(--padding-small) var(--padding-small);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-watchlist:hover {
+    background-color: var(--add-to-watchlist-hover-background);
+}
+
+#loginbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00796b;
+    height: 25px;
+    width: 60px;
+    border-radius: 2px;
+}
+
+a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+div > a {
+    padding: var(--padding-small);
+    border-bottom: 2px solid #00796b;
+}
+@media (max-width: 768px) {
+    .search-container {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .search-container input[type="text"] {
+        margin-bottom: var(--margin-medium); 
+        width: 90%; 
+    }
+
+    .movie {
+        width: 90%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: var(--padding-large);
+    }
+
+    .search-container button {
+        width: 100%;
+    }
+
+    #loginbtn {
+        width: 40%;
+    }
+}

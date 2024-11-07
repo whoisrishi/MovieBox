@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WatchBox Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <button id="showLogin">Login</button>
+        <button id="showSignup">Sign Up</button>
+
+        <div id="loginForm" class="form">
+            <h3>Login Form</h3>
+            <form action="submit" id="loginform">
+                <label for="username">Username</label>
+                <input type="text" id="username" required />
+                <label for="password">Password</label>
+                <input type="password" id="password" required />
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div id="signupForm" class="form" style="display: none;">
+            <h3>Sign Up Form</h3>
+            <form action="submit" id="signupform">
+                <label for="setusername">Username</label>
+                <input type="text" id="setusername" required />
+                <label for="setpassword">Password</label>
+                <input type="password" id="setpassword" required />
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+
+document.getElementById('showLogin').addEventListener('click', function() {
+    document.getElementById('loginForm').style.display = 'block';
+    document.getElementById('signupForm').style.display = 'none';
+});
+
+document.getElementById('showSignup').addEventListener('click', function() {
+    document.getElementById('signupForm').style.display = 'block';
+    document.getElementById('loginForm').style.display = 'none';
+});
+
+
+
+
+    </script>
+   <script src="./login.js"></script> 
+</body>
+</html>
